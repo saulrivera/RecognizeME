@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="RecognizME" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,90 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dnh-N9-zdk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RecognizME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0N-05-XSz">
+                                        <rect key="frame" x="126.5" y="19.5" width="121" height="27.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="U0N-05-XSz" secondAttribute="bottom" constant="8" id="1Pn-Te-QjY"/>
+                                    <constraint firstAttribute="height" constant="55" id="Lmd-Vq-Lwk"/>
+                                    <constraint firstItem="U0N-05-XSz" firstAttribute="centerX" secondItem="dnh-N9-zdk" secondAttribute="centerX" id="aS4-KC-pLy"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOe-0T-Vbi" customClass="CircleButton" customModule="RecognizME" customModuleProvider="target">
+                                <rect key="frame" x="157.5" y="557" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="iil-v6-jQK"/>
+                                    <constraint firstAttribute="width" constant="60" id="kCi-fd-eH9"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6uO-hV-v2g"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play &amp; Transform!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dn4-J8-02q">
+                                <rect key="frame" x="102" y="631" width="171" height="28"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Tap the button below to transcribe the audio embedded in this app" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zRY-q3-XE2">
+                                <rect key="frame" x="20" y="75" width="335" height="447"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="upk-a3-BPm">
+                                <rect key="frame" x="157" y="557" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="6CB-sK-Wr8"/>
+                                    <constraint firstAttribute="width" constant="60" id="cU5-2K-YcH"/>
+                                </constraints>
+                                <color key="color" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dnh-N9-zdk" secondAttribute="trailing" id="1fw-LQ-wMQ"/>
+                            <constraint firstItem="zRY-q3-XE2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="2jh-do-7Ka"/>
+                            <constraint firstItem="Dn4-J8-02q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4uE-4V-QRJ"/>
+                            <constraint firstItem="bOe-0T-Vbi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A6X-CP-UDf"/>
+                            <constraint firstItem="zRY-q3-XE2" firstAttribute="top" secondItem="dnh-N9-zdk" secondAttribute="bottom" constant="20" id="DLN-g6-ndv"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Dn4-J8-02q" secondAttribute="bottom" constant="8" id="Dr2-Nq-jgL"/>
+                            <constraint firstItem="dnh-N9-zdk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="JZY-rV-bap"/>
+                            <constraint firstItem="upk-a3-BPm" firstAttribute="centerX" secondItem="bOe-0T-Vbi" secondAttribute="centerX" id="Ksc-mX-a01"/>
+                            <constraint firstItem="dnh-N9-zdk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="k3Z-LC-H11"/>
+                            <constraint firstAttribute="trailing" secondItem="zRY-q3-XE2" secondAttribute="trailing" constant="20" id="kU6-Na-cns"/>
+                            <constraint firstItem="bOe-0T-Vbi" firstAttribute="top" secondItem="zRY-q3-XE2" secondAttribute="bottom" constant="35" id="nuL-4E-2AX"/>
+                            <constraint firstItem="Dn4-J8-02q" firstAttribute="top" secondItem="bOe-0T-Vbi" secondAttribute="bottom" constant="14" id="yE0-Ji-wy8"/>
+                            <constraint firstItem="upk-a3-BPm" firstAttribute="centerY" secondItem="bOe-0T-Vbi" secondAttribute="centerY" id="zGl-SK-mTP"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activitySpinner" destination="upk-a3-BPm" id="pW6-Po-uSX"/>
+                        <outlet property="transTextField" destination="zRY-q3-XE2" id="Am5-Tw-XQM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
         </scene>
     </scenes>
 </document>
